@@ -1,24 +1,30 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
+
+          {{-- Dashboard --}}
           <li class="nav-item">
             <a class="nav-link" href="index.html">
               <i class="mdi mdi-home menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
+
+          {{-- Categories Dropdown --}}
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="mdi mdi-circle-outline menu-icon"></i>
-              <span class="menu-title">UI Elements</span>
+            <a class="nav-link" data-bs-toggle="collapse" href="#categories" aria-expanded="false" aria-controls="categories">
+              <i class="bi bi-tag-fill menu-icon"></i>
+              <span class="menu-title">Category</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-basic">
+            <div class="collapse" id="categories">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('admin/category/create') }}">Add Category</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('admin/category') }}">View Categories</a></li>
               </ul>
             </div>
           </li>
+
+          {{-- Products Dropdown --}}
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#products" aria-expanded="false" aria-controls="products">
               <i class="bi bi-box-seam-fill menu-icon"></i>
@@ -32,12 +38,16 @@
               </ul>
             </div>
           </li>
+
+          {{-- Brands --}}
           <li class="nav-item">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
-              <i class="mdi mdi-view-headline menu-icon"></i>
-              <span class="menu-title">Form elements</span>
+            <a class="nav-link" href="{{ url('admin/brands')}}">
+              <i class="bi bi-r-circle-fill menu-icon"></i>
+              <span class="menu-title">Brands</span>
             </a>
           </li>
+
+          {{-- Charts --}}
           <li class="nav-item">
             <a class="nav-link" href="pages/charts/chartjs.html">
               <i class="mdi mdi-chart-pie menu-icon"></i>
