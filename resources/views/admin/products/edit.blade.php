@@ -3,15 +3,20 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
+            @if (session('message'))
+            <h5 class="alert alert-sucess mb-2">{{ session('message') }}</h5>
+        @endif
+
             <div class="card">
                 <div class="card-header">
-                    <h3>Add Product
+                    <h3>Edit Product
                         <a href="{{ url('admin/products') }}" class="btn btn-danger btn-sm text-white float-end">Back</a>
                     </h3>
                 </div>
                 <div class="card-body">
-                    <form action="{{ url('admin/products') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('admin/products/'.$product->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
 
                         {{-- Navigation Tabs --}}
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -35,11 +40,6 @@
                                     data-bs-target="#image-tab-pane" type="button" role="tab"
                                     aria-controls="image-tab-pane" aria-selected="false">Product Image</button>
                             </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="color-tab" data-bs-toggle="tab"
-                                    data-bs-target="#color-tab-pane" type="button" role="tab"
-                                    aria-controls="color-tab-pane" aria-selected="false">Product Color</button>
-                            </li>
                         </ul>
 
                         {{-- Home Tab Content --}}
@@ -50,36 +50,40 @@
                                     <label>Category</label>
                                     <select name="category_id" class="form-control">
                                         @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            <option value="{{ $category->id }}" {{ $category->id == $product->category_id ? 'selected':'' }}>
+                                                {{ $category->name }}
+                                            </option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="mb-3">
                                     <label>Product Name</label>
-                                    <input type="text" name="name" class="form-control" />
+                                    <input type="text" name="name" value="{{ $product->name }}" class="form-control" />
                                 </div>
 
                                 <div class="mb-3">
                                     <label>Product Slug</label>
-                                    <input type="text" name="slug" class="form-control" />
+                                    <input type="text" name="slug" value="{{ $product->slug }}" class="form-control" />
                                 </div>
                                 <div class="mb-3">
                                     <label>Select Brand</label>
                                     <select name="brand" class="form-control">
                                         @foreach ($brands as $brand)
-                                            <option value="{{ $brand->name }}">{{ $brand->name }}</option>
+                                            <option value="{{ $brand->name }}" {{ $brand->name == $product->brand ? 'selected':'' }}>
+                                                {{ $brand->name }}
+                                            </option>
                                         @endforeach
                                     </select>
                                 </div>
 
                                 <div class="mb-3">
                                     <label>Small Description (500 words)</label>
-                                    <textarea name="small_description" class="form-control" rows="4"></textarea>
+                                    <textarea name="small_description" class="form-control" rows="4">{{ $product->small_description }}</textarea>
                                 </div>
 
                                 <div class="mb-3">
                                     <label>Description</label>
-                                    <textarea name="description" class="form-control" rows="4"></textarea>
+                                    <textarea name="description" class="form-control" rows="4">{{ $product->description }}</textarea>
                                 </div>
                             </div>
 
@@ -153,34 +157,27 @@
                                 </div>
                                 <input type="file" name="image[]" multiple class="form-control" />
                             </div>
-
-                            {{-- Product Color Tab content --}}
-                            <div class="tab-pane fade border p-3" id="color-tab-pane" role="tabpanel"
-                            aria-labelledby="image-tab"tabindex="0">
-                                <div class="mb-3">
-                                    <label>Select Color</label>
-                                    <hr/>
+                            <div>
+                                @if($product->productImages)
                                 <div class="row">
-                                    @forelse ($colors as $coloritem)
-                                    <div class="col-md-3">
-                                        <div class="p-2 border mb-3">
-                                        Color: <input type="checkbox" name="colors[{{ $coloritem->id }}]" value="{{ $coloritem->id }}" />
-                                        {{ $coloritem->name }}
-                                        <br/>
-                                        Quantity: <input type="number" name="colorquantity[{{ $coloritem->id }}]" style="width:70px; border:1px solid" />
-                                        </div>
+                                    @foreach ($product->productImages as $image)
+                                    <div class="col-md-2">
+                                        <img src="{{ asset($image->image) }}" style="width: 80px;height:80px;"
+                                            class="me-4 border" alt="Img" />
+                                        <a href="{{ url('admin/product-image/'.$image->id.'/delete') }}" class="d-block">Remove</a>
                                     </div>
-                                    @empty
-                                    <div class="col-md-12">
-                                        <h1>No colors found</h1>
-                                    </div>
-                                    @endforelse
-                                    </div>
+                                    @endforeach
                                 </div>
+
+
+
+                                @else
+                                <h5>No Images Added</h5>
+                                @endif
                             </div>
                         </div>
                         <div>
-                            <button class="btn btn-primary" type="submit">Submit</button>
+                            <button class="btn btn-primary" type="submit">Update</button>
                         </div>
                     </form>
                 </div>
