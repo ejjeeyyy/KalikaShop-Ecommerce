@@ -47,6 +47,13 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('admin/colors')}}">
+              <i class="bi bi-r-circle-fill menu-icon"></i>
+              <span class="menu-title">Colors</span>
+            </a>
+          </li>
+
           {{-- Charts --}}
           <li class="nav-item">
             <a class="nav-link" href="pages/charts/chartjs.html">
