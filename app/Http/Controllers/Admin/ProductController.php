@@ -141,6 +141,7 @@ class ProductController extends Controller
                 }
             }
 
+            //colors
             if($request->colors){
                 foreach($request->colors as $key => $color){
                     $product->productColors()->create([
