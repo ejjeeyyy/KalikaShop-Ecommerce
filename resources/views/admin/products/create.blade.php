@@ -179,7 +179,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div class="py-2 float-end">
                             <button class="btn btn-primary" type="submit">Submit</button>
                         </div>
                     </form>

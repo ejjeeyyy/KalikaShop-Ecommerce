@@ -40,6 +40,11 @@
                                     data-bs-target="#image-tab-pane" type="button" role="tab"
                                     aria-controls="image-tab-pane" aria-selected="false">Product Image</button>
                             </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="colors-tab" data-bs-toggle="tab"
+                                    data-bs-target="#colors-tab-pane" type="button" role="tab"
+                                    >Product Colors</button>
+                            </li>
                         </ul>
 
                         {{-- Home Tab Content --}}
@@ -154,9 +159,8 @@
                             aria-labelledby="image-tab"tabindex="0">
                                 <div class="mb-3">
                                     <label>Upload Product Images</label>
+                                    <input type="file" name="image[]" multiple class="form-control" />
                                 </div>
-                                <input type="file" name="image[]" multiple class="form-control" />
-                            </div>
                             <div>
                                 @if($product->productImages)
                                 <div class="row">
@@ -168,15 +172,39 @@
                                     </div>
                                     @endforeach
                                 </div>
-
-
-
                                 @else
                                 <h5>No Images Added</h5>
                                 @endif
+                                </div>
                             </div>
-                        </div>
-                        <div>
+                        {{-- Product Color Tab content --}}
+                        <div class="tab-pane fade border p-3" id="colors-tab-pane" role="tabpanel"
+                            tabindex="0">
+
+                            
+                            <div class="mb-3">
+                                    <label>Select Color</label>
+                                    <hr/>
+                                <div class="row">
+                                    @forelse ($colors as $coloritem)
+                                    <div class="col-md-3">
+                                        <div class="p-2 border mb-3">
+                                        Color: <input type="checkbox" name="colors[{{ $coloritem->id }}]" value="{{ $coloritem->id }}" />
+                                        {{ $coloritem->name }}
+                                        <br/>
+                                        Quantity: <input type="number" name="colorquantity[{{ $coloritem->id }}]" style="width:70px; border:1px solid" />
+                                        </div>
+                                    </div>
+                                    @empty
+                                    <div class="col-md-12">
+                                        <h1>No colors found</h1>
+                                    </div>
+                                    @endforelse
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        <div class="py-2 float-end">
                             <button class="btn btn-primary" type="submit">Update</button>
                         </div>
                     </form>
