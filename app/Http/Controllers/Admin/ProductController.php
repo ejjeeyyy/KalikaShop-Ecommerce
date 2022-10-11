@@ -178,7 +178,7 @@ class ProductController extends Controller
                     File::delete($image->image);
                 }
             }
-       }
+       } 
        $product->delete();
        return redirect()->back()->with('message','Product Deleted with all its image');
     }
