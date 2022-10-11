@@ -72,9 +72,20 @@ class ProductController extends Controller
             }
         }
 
+        //color validation
+        if($request->colors){
+            foreach($request->colors as $key => $color){
+                $product->productColors()->create([
+                    'product_id' => $product->id,
+                    'color-id' => $color,
+                    'quantity' => $request->colorquantity[$key] ?? 0
+                ]);
+            }
+        }
 
         return redirect('/admin/products')->with('message', 'Product Added Successfully');
     }
+    
     public function edit(int $product_id)
     {
         $categories = Category::all();

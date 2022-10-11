@@ -15,4 +15,5 @@ class Color extends Model
         'code',
         'status'
     ];
+
 }

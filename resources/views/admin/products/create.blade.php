@@ -156,7 +156,7 @@
 
                             {{-- Product Color Tab content --}}
                             <div class="tab-pane fade border p-3" id="color-tab-pane" role="tabpanel"
-                            aria-labelledby="image-tab"tabindex="0">
+                            aria-labelledby="color-tab"tabindex="0">
                                 <div class="mb-3">
                                     <label>Select Color</label>
                                     <hr/>

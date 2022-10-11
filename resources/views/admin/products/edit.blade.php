@@ -180,9 +180,8 @@
                         {{-- Product Color Tab content --}}
                         <div class="tab-pane fade border p-3" id="colors-tab-pane" role="tabpanel"
                             tabindex="0">
-
-                            
                             <div class="mb-3">
+                                    <h4>Add Product Color</h4>
                                     <label>Select Color</label>
                                     <hr/>
                                 <div class="row">
@@ -202,7 +201,41 @@
                                     @endforelse
                                     </div>
                                 </div>
-                            
+                                
+                                <div class="table-responsive">
+                                    <table class="table table-sm table bordered">
+                                       <thead>
+                                        <tr>
+                                            <th>Color Name</th>
+                                            <th>Quantity</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                       </thead>     
+                                        <tbody>
+                                            @foreach ($product->productColors as $prodColor)
+                                            <tr class="prod-color-tr">
+                                                <td>
+                                                @if($prodColor->color)
+                                                {{ $prodColor->color->name }}
+                                                @else
+                                                No Color Found
+                                                @endif
+                                                </td>
+                                                <td>
+                                                    <div class="input-group mb-3" style="width-150px">
+                                                        <input type="text" value="{{ $prodColor->quantity }}" class="form-control form-control-sm" />
+                                                        <button type="button" value="{{ $prodColor->id }}" class="btn btn-primary btn-sm text-white">Update</button>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                <button type="button" value="{{ $prodColor->id }}" class="btn btn-danger btn-sm text-white">Delete</button>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+
                             </div>
                         <div class="py-2 float-end">
                             <button class="btn btn-primary" type="submit">Update</button>
