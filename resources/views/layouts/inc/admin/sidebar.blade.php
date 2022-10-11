@@ -24,6 +24,14 @@
             </div>
           </li>
 
+           {{-- Brands --}}
+           <li class="nav-item">
+            <a class="nav-link" href="{{ url('admin/brands')}}">
+              <i class="bi bi-r-circle-fill menu-icon"></i>
+              <span class="menu-title">Brands</span>
+            </a>
+          </li>
+
           {{-- Products Dropdown --}}
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#products" aria-expanded="false" aria-controls="products">
@@ -39,17 +47,9 @@
             </div>
           </li>
 
-          {{-- Brands --}}
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url('admin/brands')}}">
-              <i class="bi bi-r-circle-fill menu-icon"></i>
-              <span class="menu-title">Brands</span>
-            </a>
-          </li>
-
           <li class="nav-item">
             <a class="nav-link" href="{{ url('admin/colors')}}">
-              <i class="bi bi-r-circle-fill menu-icon"></i>
+              <i class="bi bi-palette-fill menu-icon"></i>
               <span class="menu-title">Colors</span>
             </a>
           </li>

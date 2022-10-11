@@ -222,7 +222,7 @@
                                                 @endif
                                                 </td>
                                                 <td>
-                                                    <div class="input-group mb-3" style="width-150px">
+                                                    <div class="input-group mb-3" style="width:170px;">
                                                         <input type="text" value="{{ $prodColor->quantity }}" class="form-control form-control-sm" />
                                                         <button type="button" value="{{ $prodColor->id }}" class="btn btn-primary btn-sm text-white">Update</button>
                                                     </div>
