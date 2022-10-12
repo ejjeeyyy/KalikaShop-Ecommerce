@@ -221,9 +221,9 @@
                                                 No Color Found
                                                 @endif
                                                 </td>
-                                                <td>
+                                                <td> 
                                                     <div class="input-group mb-3" style="width:150px;">
-                                                        <input type="text" value="{{ $prodColor->quantity }}" class="productColorQuantity form-control form-control-sm" />
+                                                    <input type="text" value="{{ $prodColor->quantity }}" class="productColorQuantity form-control form-control-sm" />
                                                         <button type="button" value="{{ $prodColor->id }}" class="updateProductColorBtn btn btn-primary btn-sm text-white">Update</button>
                                                     </div>
                                                 </td>
