@@ -7,6 +7,7 @@ use App\Models\Brand;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Support\Str;
+use App\Models\ProductColor;
 use App\Models\ProductImage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -183,4 +184,24 @@ class ProductController extends Controller
        $product->delete();
        return redirect()->back()->with('message','Product Deleted with all its image');
     }
+
+    //update product color quantity
+
+    public function updateProdColorQty(Request $request, $prod_color_id)
+    {
+        $productColorData = Product::findOrFail($request->product_id)
+                                ->productColors()->where('id',$prod_color_id)->first();
+        $productColorData->update([
+            'quantity' => $request->qty
+        ]);
+        return response()->json(['message'=>'Product Color Quantity updated']);
+    }
+
+    public function deleteProdColor($prod_color_id)
+    {
+        $prodColor = ProductColor::findOrFail($prod_color_id);
+        $prodColor->delete();
+        return response()->json(['message'=>'Product Color Deleted']);
+    }
+
 }
