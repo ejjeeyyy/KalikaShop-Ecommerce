@@ -1,4 +1,5 @@
 <div class="main-navbar shadow-sm sticky-top">
+    {{-- Top Navbar --}}
     <div class="top-navbar">
         <div class="container-fluid">
             <div class="row">
@@ -72,6 +73,8 @@
             </div>
         </div>
     </div>
+
+    {{-- Bottom Navbar --}}
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none" href="#">
@@ -83,13 +86,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">All Categories</a>
+                        <a class="nav-link" href="{{ url('/collections') }}">All Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">New Arrivals</a>
+                        <a class="nav-link" href="{{ url('/new-arrivals') }}">New Arrivals</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Featured Products</a>
