@@ -51,7 +51,7 @@
 
           <li class="nav-item">
             <a class="nav-link" href="{{ url('admin/colors')}}">
-            <i class="bi bi-r-circle-fill menu-icon"></i>
+            <i class="bi bi-palette-fill menu-icon"></i>
               <span class="menu-title">Colors</span>
             </a>
           </li>
@@ -63,18 +63,21 @@
               <span class="menu-title">Charts</span>
             </a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="pages/tables/basic-table.html">
               <i class="mdi mdi-grid-large menu-icon"></i>
               <span class="menu-title">Tables</span>
             </a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="pages/icons/mdi.html">
-              <i class="mdi mdi-emoticon menu-icon"></i>
-              <span class="menu-title">Icons</span>
+            <a class="nav-link" href="{{ url('admin/sliders') }}">
+              <i class="bi bi-layout-three-columns menu-icon"></i>
+              <span class="menu-title">Home Slider</span>
             </a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <i class="mdi mdi-account menu-icon"></i>
