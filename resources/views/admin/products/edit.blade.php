@@ -97,17 +97,17 @@
                                 tabindex="0">
                                 <div class="mb-3">
                                     <label>Meta Title</label>
-                                    <input type="text" name="meta_title" class="form-control" />
+                                    <input type="text" name="meta_title" class="form-control" value="{{ $product->meta_title }}"/>
                                 </div>
 
                                 <div class="mb-3">
                                     <label>Meta Description</label>
-                                    <textarea name="meta_description" class="form-control" rows="4"></textarea>
+                                    <textarea name="meta_description" class="form-control" rows="4">{{ $product->meta_description }}</textarea>
                                 </div>
 
                                 <div class="mb-3">
                                     <label>Meta Keyword</label>
-                                    <textarea name="meta_keyword" class="form-control" rows="4"></textarea>
+                                    <textarea name="meta_keyword" class="form-control" rows="4">{{ $product->meta_keyword }}</textarea>
                                 </div>
 
                             </div>
@@ -119,35 +119,35 @@
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label>Original Price</label>
-                                            <input type="text" name="original_price" class="form-control" />
+                                            <input type="text" name="original_price" class="form-control" value="{{ $product->original_price }}" />
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label>Selling Price</label>
-                                            <input type="text" name="selling_price" class="form-control" />
+                                            <input type="text" name="selling_price" class="form-control" value="{{ $product->selling_price }}" />
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label>Quantity</label>
-                                            <input type="number" name="quantity" class="form-control" />
+                                            <input type="number" name="quantity" class="form-control" value="{{ $product->quantity }}" />
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label>Trending</label>
-                                            <input type="checkbox" name="trending" />
+                                            <input type="checkbox" name="trending" {{ $product->trending == '1' ? 'checked':'' }} />
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label>Status</label>
-                                            <input type="checkbox" name="status" />
+                                            <input type="checkbox" name="status" {{ $product->status == '1' ? 'checked':'' }}/>
                                         </div>
                                     </div>
 
