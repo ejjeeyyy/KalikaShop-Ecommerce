@@ -168,7 +168,7 @@
                                     <div class="col-md-2">
                                         <img src="{{ asset($image->image) }}" style="width: 80px;height:80px;"
                                             class="me-4 border" alt="Img" />
-                                        <a href="{{ url('admin/product-image/'.$image->id.'/delete') }}" class="d-block">Remove</a>
+                                        <a href="{{ url('admin/product-image/'.$image->id.'/delete') }}" class=" btn btn-danger btn-sm text-white">Remove</a>
                                     </div>
                                     @endforeach
                                 </div>
