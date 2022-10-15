@@ -26,7 +26,7 @@
                     </div>
                     <div class="mb-3">
                         <label>Color Code</label>
-                        <input type="text" name="code" value="{{ $color->code }} class="form-control">
+                        <input type="text" name="code" value="{{ $color->code }}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label>Status</label> <br/>

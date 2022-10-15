@@ -31,7 +31,6 @@ class ColorController extends Controller
 
     public function edit(Color $color)
     {
-        return $color;
         return view('admin.colors.edit', compact('color'));
     }
 
