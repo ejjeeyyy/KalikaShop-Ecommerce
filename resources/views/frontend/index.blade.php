@@ -1,12 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Home Page')
+@section('title', 'KalikaShop Home Page')
 
 @section('content')
 
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-  
-
   <div class="carousel-inner">
 
     @foreach($sliders as $key => $sliderItem)
@@ -25,7 +23,7 @@
                         </p>
                         <div>
                             <a href="#" class="btn btn-slider">
-                                Get Now
+                                Shop Now
                             </a>
                         </div>
                     </div>

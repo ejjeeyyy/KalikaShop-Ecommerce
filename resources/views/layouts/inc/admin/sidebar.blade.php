@@ -24,7 +24,13 @@
             </div>
           </li>
 
-
+            {{-- Brands --}}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('admin/brands')}}">
+                <i class="bi bi-r-circle-fill menu-icon"></i>
+                <span class="menu-title">Brands</span>
+              </a>
+            </li>
 
           {{-- Products Dropdown --}}
           <li class="nav-item">
@@ -41,13 +47,6 @@
             </div>
           </li>
           
-          {{-- Brands --}}
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url('admin/brands')}}">
-              <i class="bi bi-r-circle-fill menu-icon"></i>
-              <span class="menu-title">Brands</span>
-            </a>
-          </li>
 
           <li class="nav-item">
             <a class="nav-link" href="{{ url('admin/colors')}}">
