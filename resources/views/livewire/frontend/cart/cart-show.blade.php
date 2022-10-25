@@ -102,7 +102,7 @@
                 <div class="col-md-4 mt-3">
                     <div class="shadow-sm bg-white p-3">
                         <h4>Total:
-                            <span class="float-end">{{ $totalPrice }}</span>
+                            <span class="float-end">₱{{ $totalPrice }}</span>
                         </h4>
                         <hr>
                         <a href="{{ url('/checkout') }}" class="btn btn-warning w-100">Checkout</a>

@@ -16,7 +16,7 @@ class CartShow extends Component
         {
             if($cartData->productColor()->where('id',$cartData->product_color_id)->exists()){
 
-                $productColor = $cartData->productColor()-where('id',$cartData->product_color_id)->first();
+                $productColor = $cartData->productColor()->where('id',$cartData->product_color_id)->first();
                 if($productColor->quantity > $cartData->quantity){
                     $cartData->decrement('quantity');
                     $this->dispatchBrowserEvent('message', [
@@ -64,8 +64,8 @@ class CartShow extends Component
         $cartData = Cart::where('id',$cartId)->where('user_id', auth()->user()->id)->first();
         if($cartData)
         {
-            if($cartData->productColor()-where('id',$cartData->product_color_id)->exists()){
-                $productColor = $cartData->productColor()-where('id',$cartData->product_color_id)->first();
+            if($cartData->productColor()->where('id',$cartData->product_color_id)->exists()){
+                $productColor = $cartData->productColor()->where('id',$cartData->product_color_id)->first();
                 if($productColor->quantity > $cartData->quantity){
                     $cartData->increment('quantity');
                     $this->dispatchBrowserEvent('message', [
