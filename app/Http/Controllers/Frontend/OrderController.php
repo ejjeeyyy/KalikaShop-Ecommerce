@@ -19,8 +19,11 @@ class OrderController extends Controller
     {
         $order = Order::where('user_id',Auth::user()->id)->where('id',$orderId)->first();
         if($order){
+
             return view('frontend.orders.view', compact('order'));
+            
         }else{
+
             return redirect()->back()->with('message','No Order Found');
         }
        
