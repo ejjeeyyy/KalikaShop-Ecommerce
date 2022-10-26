@@ -146,6 +146,14 @@
 
                                     <div class="col-md-4">
                                         <div class="mb-3">
+                                            <label>Featured</label>
+                                            <input type="checkbox" name="featured" {{ $product->featured == '1' ? 'checked':'' }} />
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
                                             <label>Status</label>
                                             <input type="checkbox" name="status" {{ $product->status == '1' ? 'checked':'' }}/>
                                         </div>
@@ -201,7 +209,7 @@
                                     @endforelse
                                     </div>
                                 </div>
-                                
+
                                 <div class="table-responsive">
                                     <table class="table table-sm table bordered">
                                        <thead>
@@ -210,7 +218,7 @@
                                             <th>Quantity</th>
                                             <th>Delete</th>
                                         </tr>
-                                       </thead>     
+                                       </thead>
                                         <tbody>
                                             @foreach ($product->productColors as $prodColor)
                                             <tr class="prod-color-tr">
@@ -221,7 +229,7 @@
                                                 No Color Found
                                                 @endif
                                                 </td>
-                                                <td> 
+                                                <td>
                                                     <div class="input-group mb-3" style="width:150px;">
                                                     <input type="text" value="{{ $prodColor->quantity }}" class="productColorQuantity form-control form-control-sm" />
                                                         <button type="button" value="{{ $prodColor->id }}" class="updateProductColorBtn btn btn-primary btn-sm text-white">Update</button>
@@ -288,8 +296,8 @@
             });
         });
 
-        // Update Color Quantity Script 
-        
+        // Update Color Quantity Script
+
         $(document).on('click', '.deleteProductColorBtn', function () {
             var prod_color_id = $(this).val();
             var thisClick = $(this);
@@ -302,7 +310,7 @@
                     alert(response.message)
                 }
             });
-        
+
         });
 
     });

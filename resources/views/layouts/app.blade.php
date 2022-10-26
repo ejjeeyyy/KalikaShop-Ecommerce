@@ -21,6 +21,14 @@
 
     <!-- Styles -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    {{-- Owl Carousel --}}
+    <link href="{{ asset('assets/css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/owl.theme.default.min.css') }}" rel="stylesheet">
+
+    {{-- Exzoom - Product Image --}}
+    <link href="{{ asset('assets/exzoom/jquery.exzoom.css') }}" rel="stylesheet">
+
     <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
 
     {{-- Alertify CSS --}}
@@ -60,6 +68,15 @@
             }
         })
     </script>
+
+    {{-- Owl Carousel JS --}}
+     <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+
+    {{-- Exzoom JS --}}
+     <script src="{{ asset('assets/exzoom/jquery.exzoom.js') }}"></script>
+
+     @yield('script')
+
     @livewireScripts
     @stack('scripts')
 </body>

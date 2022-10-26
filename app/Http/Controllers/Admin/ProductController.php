@@ -49,6 +49,7 @@ class ProductController extends Controller
             'selling_price' => $validatedData['selling_price'],
             'quantity' => $validatedData['quantity'],
             'trending' => $request->trending == true ? '1':'0',
+            'featured' => $request->featured == true ? '1':'0',
             'status' => $request->status == true ? '1':'0',
             'meta_title' => $validatedData['meta_title'],
             'meta_keyword' => $validatedData['meta_keyword'],
@@ -86,13 +87,13 @@ class ProductController extends Controller
 
         return redirect('/admin/products')->with('message', 'Product Added Successfully');
     }
-    
+
     public function edit(int $product_id)
     {
         $categories = Category::all();
         $brands = Brand::all();
         $product = Product::findOrFail($product_id);
-        
+
         $product_color = $product->productColors->pluck('color_id')->toArray();
         $colors = Color::whereNotIn('id',$product_color)->get();
 
@@ -119,6 +120,7 @@ class ProductController extends Controller
                 'selling_price' => $validatedData['selling_price'],
                 'quantity' => $validatedData['quantity'],
                 'trending' => $request->trending == true ? '1':'0',
+                'featured' => $request->featured == true ? '1':'0',
                 'status' => $request->status == true ? '1':'0',
                 'meta_title' => $validatedData['meta_title'],
                 'meta_keyword' => $validatedData['meta_keyword'],
@@ -180,7 +182,7 @@ class ProductController extends Controller
                     File::delete($image->image);
                 }
             }
-       } 
+       }
        $product->delete();
        return redirect()->back()->with('message','Product Deleted with all its image');
     }

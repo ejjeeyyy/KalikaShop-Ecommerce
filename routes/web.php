@@ -19,13 +19,19 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index']);
 
-// Collections Route
-Route::get('/collections', [App\Http\Controllers\Frontend\FrontendController::class, 'categories']);
-Route::get('/collections/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'products']);
-Route::get('/collections/{category_slug}/{product_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'productView']);
- 
+Route::controller(App\Http\Controllers\Frontend\FrontendController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('/collections', 'categories');
+    Route::get('/collections/{category_slug}', 'products');
+    Route::get('/collections/{category_slug}/{product_slug}', 'productView');
+
+    Route::get('/new-arrivals', 'newArrival');
+    Route::get('/featured-products', 'featuredProducts');
+});
+
+
+
 Route::middleware(['auth'])->group(function (){
     //Wishlist Route
     Route::get('wishlist', [App\Http\Controllers\Frontend\WishlistController::class, 'index']);
@@ -34,7 +40,7 @@ Route::middleware(['auth'])->group(function (){
 
     Route::get('orders', [App\Http\Controllers\Frontend\OrderController::class, 'index']);
     Route::get('orders/{orderId}', [App\Http\Controllers\Frontend\OrderController::class, 'show']);
-    
+
 
 });
 
@@ -55,7 +61,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
         Route::get('sliders/{slider}/edit', 'edit');
         Route::put('sliders/{slider}', 'update');
         Route::get('sliders/{slider}/delete', 'destroy');
- 
+
     });
     //Category Routes
     Route::controller(App\Http\Controllers\Admin\CategoryController::class)->group(function () {
@@ -73,14 +79,14 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
         Route::get('/products/create', 'create');
         Route::post('/products', 'store');
         Route::get('/products/{product}/edit', 'edit');
-        Route::put('/products/{product}', 'update'); 
+        Route::put('/products/{product}', 'update');
         Route::get('products/{product_id}/delete','destroy');
         Route::get('product-image/{product_image_id}/delete','destroyImage');
-    
+
         Route::post('product-color/{prod_color_id}', 'updateProdColorQty');
         Route::get('product-color/{prod_color_id}/delete', 'deleteProdColor');
-        
-    
+
+
     });
 
 
@@ -105,7 +111,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
 
         Route::get('/invoice/{orderId}', 'viewInvoice');
         Route::get('/invoice/{orderId}/generate', 'generateInvoice');
- 
+
     });
 
 });
