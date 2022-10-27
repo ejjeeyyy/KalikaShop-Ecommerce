@@ -113,7 +113,7 @@
 
 @push('scripts')
 
-    <script src="https://www.paypal.com/sdk/js?client-id=AfZ9euRlTxpgN0Ql2FkKSYmh-4nqxr3cS2fSqgzGLGHHbZkdAF8ujKXf2XcX1ttwaN5KDz0APiO27sna&currency=USD"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AfZ9euRlTxpgN0Ql2FkKSYmh-4nqxr3cS2fSqgzGLGHHbZkdAF8ujKXf2XcX1ttwaN5KDz0APiO27sna&currency=PHP"></script>
     <script>
         paypal.Buttons({
             onClick: function() {
@@ -155,7 +155,6 @@
                 Livewire.emit('transactionEmit', transaction.id);
               }
               
-              // alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
               
             });
           }
