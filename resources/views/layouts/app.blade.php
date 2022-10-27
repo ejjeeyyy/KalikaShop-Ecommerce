@@ -51,6 +51,10 @@
         <main>
             @yield('content')
         </main>
+        
+        {{-- footer --}}
+        @include('layouts.inc.frontend.footer')
+
     </div>
 
     <!-- Scripts -->
