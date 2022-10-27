@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'New Arrivals Product')
+@section('title', 'New Arrival Products')
 
 @section('content')
 
@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h4>New Arrival</h4>
+                <h4>New Arrival Products</h4>
                 <div class="underline mb-4"></div>
             </div>
 

@@ -6,8 +6,7 @@
                     <h4 class="footer-heading">{{ $appSetting->website_name ?? 'Website Name' }}</h4>
                     <div class="footer-underline"></div>
                     <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        {{ $appSetting->meta_description ?? 'Website Description' }}
                     </p>
                 </div>
                 <div class="col-md-3">
@@ -65,7 +64,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <p class=""> &copy; 2022 - KalikaShop - Ecommerce. All rights reserved.</p>
+                    <p class=""> &copy; 2022 - {{ $appSetting->website_name }}. All rights reserved.</p>
                 </div>
                 <div class="col-md-4">
                     <div class="social-media">
