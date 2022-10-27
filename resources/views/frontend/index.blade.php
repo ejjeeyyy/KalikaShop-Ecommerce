@@ -48,8 +48,7 @@
         <div class="col-md-8 text-center">
             <h4> Welcome to KalikaShop </h4>
             <div class="underline mx-auto"></div>
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, quo explicabo. Delectus, ullam aut incidunt accusamus harum unde veniam quam excepturi, mollitia, architecto amet. Perferendis iste fugit laboriosam odio maxime eius vitae eligendi animi, reprehenderit iure quas. Id, quos pariatur ipsa reprehenderit quibusdam expedita eaque ratione itaque perferendis. Necessitatibus, dignissimos.
-            </p>
+            <p>{{ $appSetting->meta_description ?? 'Website Name' }}</p>
         </div>
         </div>
     </div>
