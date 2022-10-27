@@ -169,7 +169,7 @@
                     </td>
                     <td width="10%">{{ $orderItem->price }}</td>
                     <td width="10%">{{ $orderItem->quantity }}</td>
-                    <td width="15%" class="fw-bold">₱{{ $orderItem->quantity * $orderItem->price }}</td>
+                    <td width="15%" class="fw-bold"><span style="font-family: DejaVu Sans; sans-serif;">&#x20B1;</span>{{ $orderItem->quantity * $orderItem->price }}</td>
                     @php
                         $totalPrice += $orderItem->quantity * $orderItem->price ;
                     @endphp
@@ -178,7 +178,7 @@
             <tr>
                 <td colspan="4" class="total-heading">Total Amount:</td>
                 <td colspan="1" class="total-heading">
-                    ₱{{ $totalPrice }}
+                    <span style="font-family: DejaVu Sans; sans-serif;">&#x20B1;</span>{{ $totalPrice }}
                 </td>
             </tr>
         </tbody>
