@@ -79,8 +79,15 @@
 
           <li class="nav-item">
             <a class="nav-link" href="{{ url('admin/sliders') }}">
-              <i class="bi bi-layout-three-columns menu-icon"></i>
+              <i class="bi bi-images menu-icon"></i>
               <span class="menu-title">Home Slider</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('admin/settings') }}">
+              <i class="bi bi-gear-fill menu-icon"></i>
+              <span class="menu-title"> Site Settings</span>
             </a>
           </li>
 
@@ -100,6 +107,7 @@
               </ul>
             </div>
           </li>
+         
           <li class="nav-item">
             <a class="nav-link" href="documentation/documentation.html">
               <i class="mdi mdi-file-document-box-outline menu-icon"></i>

@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <h4 class="footer-heading">KalikaShop</h4>
+                    <h4 class="footer-heading">{{ $appSetting->website_name ?? 'Website Name' }}</h4>
                     <div class="footer-underline"></div>
                     <p>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -33,17 +33,28 @@
                     <div class="footer-underline"></div>
                     <div class="mb-2">
                         <p>
-                            <i class="fa fa-map-marker"></i> Technological Institute of the Philippines - Arlegui Campus, 1338 Arlegui St, Quiapo, Manila, 1001 Metro Manila
+                            <i class="fa fa-map-marker"></i> {{ $appSetting->address ?? 'Address here' }}
                         </p>
                     </div>
                     <div class="mb-2">
                         <a href="" class="text-white">
-                            <i class="fa fa-phone"></i> +91 888-XXX-XXXX
+                            <i class="fa fa-phone"></i> {{ $appSetting->phone1 ?? 'Phone 1' }}
                         </a>
                     </div>
                     <div class="mb-2">
                         <a href="" class="text-white">
-                            <i class="fa fa-envelope"></i> kaliksahop@gmail.com
+                            <i class="fa fa-phone"></i> {{ $appSetting->phone2 ?? 'Phone 2' }}
+                        </a>
+                    </div>
+                    <div class="mb-2">
+                        <a href="" class="text-white">
+                            <i class="fa fa-envelope"></i> {{ $appSetting->email1 ?? 'Email 1' }}
+                        </a>
+                    </div>
+
+                    <div class="mb-2">
+                        <a href="" class="text-white">
+                            <i class="fa fa-envelope"></i> {{ $appSetting->email2 ?? 'Email 2' }}
                         </a>
                     </div>
                 </div>
@@ -58,11 +69,23 @@
                 </div>
                 <div class="col-md-4">
                     <div class="social-media">
-                        Get Connected:
-                        <a href=""><i class="fa fa-facebook"></i></a>
-                        <a href=""><i class="fa fa-twitter"></i></a>
-                        <a href=""><i class="fa fa-instagram"></i></a>
-                        <a href=""><i class="fa fa-youtube"></i></a>
+                        <span class="text-white">Get Connected:</span>
+                        @if ($appSetting->facebook)
+                            <a href="{{ $appSetting->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>
+                        @endif
+
+                        @if ($appSetting->twitter)
+                            <a href="{{ $appSetting->twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                        @endif
+
+                        @if ($appSetting->instagram)
+                            <a href="{{ $appSetting->instagram }}" target="_blank"><i class="fa fa-instagram"></i></a>
+                        @endif
+
+                        @if ($appSetting->youtube)
+                            <a href="{{ $appSetting->youtube }}" target="_blank"><i class="fa fa-youtube"></i></a>
+                        @endif
+                       
                     </div>
                 </div>
             </div>
