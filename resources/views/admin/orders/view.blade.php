@@ -21,6 +21,9 @@
                     <a href="{{ url('admin/invoice/'.$order->id) }}" target="_blank" class="btn btn-warning btn-sm float-end mx-1">
                         View Invoice
                     </a>
+                    <a href="{{ url('admin/invoice/'.$order->id.'/mail') }}" class="btn btn-info btn-sm float-end mx-1">
+                        Send Invoice Via Mail
+                    </a>
                 </div>
                 <div class="card-body">
 
@@ -34,13 +37,13 @@
                                     <h6>Ordered Date: {{ $order->created_at->format('d-m-Y h:i A') }}</h6>
                                     <h6>Payment Mode: {{ $order->payment_mode }}</h6>
                                     <h6 class="border p-2 text-success">
-                                        Order Status Message: <span class="text-uppercase">{{ $order->status_message }}</span> 
+                                        Order Status Message: <span class="text-uppercase">{{ $order->status_message }}</span>
                                     </h6>
                                 </div>
                                 <div class="col-md-6">
                                     <h5>User Details</h5>
                                     <hr>
-    
+
                                     <h6>Fullname: {{ $order->fullname }}</h6>
                                     <h6>Email Id: {{ $order->email }}</h6>
                                     <h6>Phone: {{ $order->phone }}</h6>
@@ -48,7 +51,7 @@
                                     <h6>Pin code: {{ $order->pincode }}</h6>
                                 </div>
                             </div>
-    
+
                             <br/>
                             <h5>Order Items</h5>
                             <hr>
@@ -73,13 +76,13 @@
                                             <tr>
                                                 <td width="10%">{{ $orderItem->id }}</td>
                                                 <td width="10%">
-                                                    
+
                                                 @if ($orderItem->product->productImages)
-                                                    <img src="{{ asset($orderItem->product->productImages[0]->image) }}" 
+                                                    <img src="{{ asset($orderItem->product->productImages[0]->image) }}"
                                                     style="width: 50px; height: 50px" alt="">
                                                         @else
-                                                            <img src="" style="width: 50px; height: 50px" alt="">                                                
-                                                @endif    
+                                                            <img src="" style="width: 50px; height: 50px" alt="">
+                                                @endif
                                                 </td>
                                                 <td>
                                                     {{ $orderItem->product->name }}
@@ -105,11 +108,11 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div> 
+                            </div>
 
                     </div>
                 </div>
-                 
+
             </div>
 
             <div class="card border mt-3">
@@ -134,7 +137,7 @@
                                     </select>
 
                                     <button type="submit" class="btn btn-primary text-white">Update</button>
-                                </div> 
+                                </div>
                             </form>
                         </div>
                         <div class="col-md-6">

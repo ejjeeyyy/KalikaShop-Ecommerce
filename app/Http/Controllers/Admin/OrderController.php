@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Models\Order;
 use Barryvdh\DomPDF\Facade\Pdf;
+use App\Mail\InvoiceOrderMailable;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -29,7 +30,7 @@ class OrderController extends Controller
 
                             return $q->where('status_message',$request->status);
                         })
-                        
+
                         ->paginate(10);
 
                         return view('admin.orders.index', compact('orders'));
@@ -39,7 +40,7 @@ class OrderController extends Controller
     {
         $order = Order::where('id',$orderId)->first();
         if($order){
-            return view('admin.orders.view', compact('order')); 
+            return view('admin.orders.view', compact('order'));
         }else{
             return redirect('admin/orders')->with('message','Order Id not found');
         }
@@ -74,4 +75,21 @@ class OrderController extends Controller
         $todayDate = Carbon::now()->format('d-m-Y');
         return $pdf->download('invoice-'.$order->id.'-'.$todayDate.'.pdf');
     }
+
+    public function mailInvoice(int $orderId)
+    {
+        $order = Order::findOrfail($orderId);
+        try{
+
+            Mail::to("$order->email")->send(new InvoiceOrderMailable($order));
+            return redirect('admin/orders/'.$orderId)->with('message','Invoice Mail has been sent to '.$order->email);
+
+        }catch(\Exception $e){
+            return redirect('admin/orders/'.$orderId)->with('message','Something went wrong! '.$order->email);
+        }
+
+
+    }
+
+
 }
