@@ -73,7 +73,7 @@
             border: 1px solid #fff !important;
         }
         .bg-blue {
-            background-color: #414ab1;
+            background-color: #279b40;
             color: #fff;
         }
     </style>

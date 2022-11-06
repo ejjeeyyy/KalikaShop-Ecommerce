@@ -73,7 +73,7 @@
             border: 1px solid #fff !important;
         }
         .bg-blue {
-            background-color: #414ab1;
+            background-color: #279b40;
             color: #fff;
         }
     </style>
@@ -83,7 +83,7 @@
     <div class="text-center">
         <h2>Thank You for your Order</h2>
         <p>
-            Thank you for purchasing with {{ $appSetting->website_name ?? "KalikaShop"}}.
+            We have successfully recieved and processed your order {{ $appSetting->website_name ?? "KalikaShop"}}.
             <br/>
             Your order items and details are provided below
         </p>

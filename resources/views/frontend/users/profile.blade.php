@@ -47,25 +47,25 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label>Email Address</label>
-                                        <input type="text" readonly value="{{ Auth::user()->email }}" class="form-control" />
+                                        <input type="email" name="email" readonly value="{{ Auth::user()->email }}" class="form-control" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label>Phone Number</label>
-                                        <input type="text" name="phone" value="{{ Auth::user()->userDetail->phone ?? '' }}" class="form-control" />
+                                        <input type="text" name="phone" placeholder="Please enter your phone number" value="{{ Auth::user()->userDetail->phone ?? '' }}" class="form-control" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label>Zip/Pin Code</label>
-                                        <input type="text" name="pin_code" value="{{ Auth::user()->userDetail->pin_code ?? '' }}" class="form-control" />
+                                        <label>Zip Code</label>
+                                        <input type="text" name="pin_code" placeholder="Please enter your zip code" value="{{ Auth::user()->userDetail->pin_code ?? '' }}" class="form-control" />
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="mb-3">
                                         <label>Address</label>
-                                        <textarea name="address" class="form-control" rows="3">{{ Auth::user()->userDetail->address ?? '' }}</textarea>
+                                        <textarea name="address" placeholder="Please enter your full address" class="form-control" rows="3">{{ Auth::user()->userDetail->address ?? '' }}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
