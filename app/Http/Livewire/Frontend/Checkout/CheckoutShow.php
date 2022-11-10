@@ -93,6 +93,7 @@ class CheckoutShow extends Component
                 'product_id' => $cartItem->product_id,
                 'product_color_id' => $cartItem->product_color_id,
                 'quantity' => $cartItem->quantity,
+                'allocation_percentage' => $cartItem->product->allocation_percentage,
                 'price' => $cartItem->product->selling_price
             ]);
 

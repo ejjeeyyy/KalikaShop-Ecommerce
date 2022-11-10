@@ -7,6 +7,7 @@ use App\Models\Brand;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\OrderItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
@@ -31,9 +32,10 @@ class DashboardController extends Controller
         $todayOrder = Order::whereDate('created_at', $todayDate)->count();
         $thisMonthOrder = Order::whereMonth('created_at', $thisMonth)->count();
         $thisYearOrder = Order::whereYear('created_at', $thisYear)->count();
+        $orderItems = OrderItem::all();
 
         return view('admin.dashboard', compact('totalProducts',
         'totalCategories','totalBrands','totalAllUsers','totalUser',
-        'totalAdmin','totalOrder','todayOrder','thisMonthOrder','thisYearOrder'));
+        'totalAdmin','totalOrder','todayOrder','thisMonthOrder','thisYearOrder','orderItems'));
     }
 }

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('product_id');
             $table->integer('product_color_id')->nullable();
             $table->integer('quantity');
+            $table->integer('allocation_percentage');
             $table->integer('price');
             $table->timestamps();
         });

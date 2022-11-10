@@ -19,6 +19,7 @@ class OrderItem extends Model
         'product_id',
         'product_color_id',
         'quantity',
+        'allocation_percentage',
         'price'
     ];
 
