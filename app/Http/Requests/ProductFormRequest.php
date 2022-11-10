@@ -71,6 +71,11 @@ class ProductFormRequest extends FormRequest
                 'integer'
             ],
 
+            'allocation_percentage' => [
+                'required',
+                'integer'
+            ],
+
             'trending' => [
                 'nullable',
             ],

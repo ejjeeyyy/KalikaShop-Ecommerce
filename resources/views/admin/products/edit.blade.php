@@ -139,6 +139,16 @@
 
                                     <div class="col-md-4">
                                         <div class="mb-3">
+                                            <label>Allocation Percentage</label>
+                                            <div class="input-group">
+                                                <div class="input-group-text">%</div>
+                                                <input type="number" name="allocation_percentage" class="form-control" value="{{ $product->allocation_percentage }}" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
                                             <label>Trending</label>
                                             <input type="checkbox" name="trending" {{ $product->trending == '1' ? 'checked':'' }} />
                                         </div>

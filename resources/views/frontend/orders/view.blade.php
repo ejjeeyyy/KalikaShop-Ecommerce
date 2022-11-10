@@ -85,6 +85,7 @@
                                                 <td width="10%" class="fw-bold">₱{{ $orderItem->quantity * $orderItem->price }}</td>
                                                 @php
                                                     $totalPrice += $orderItem->quantity * $orderItem->price ;
+                                                    $totalAllocation = $totalPrice*(($orderItem->product->allocation_percentage * $orderItem->quantity)/100);
                                                 @endphp
                                             </tr>
                                         @endforeach
@@ -94,8 +95,10 @@
                                                 ₱{{ $totalPrice }}
                                             </td>
                                         </tr>
+                                       
                                     </tbody>
                                 </table>
+                                <p>Hooray! You have contributed ₱{{ $totalAllocation }} to the environment.</p>
                             </div> 
 
                     </div>

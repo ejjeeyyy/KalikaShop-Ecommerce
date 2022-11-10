@@ -23,6 +23,7 @@
                             <th>Category</th>
                             <th>Product</th>
                             <th>Price</th>
+                            <th>Allocation Percentage</th>
                             <th>Quantity</th>
                             <th>Status</th>
                             <th>Action</th>
@@ -41,6 +42,7 @@
                             </td>
                             <td>{{ $product->name }}</td>
                             <td>{{ $product->selling_price }}</td>
+                            <td>%{{ $product->allocation_percentage }}</td>
                             <td>{{ $product->quantity }}</td>
                             <td>{{ $product->status == '1' ? 'Hidden':'Visible' }}</td>
                             <td>

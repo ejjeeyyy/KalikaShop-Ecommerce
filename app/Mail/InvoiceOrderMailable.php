@@ -30,6 +30,6 @@ class InvoiceOrderMailable extends Mailable
     {
         $subject = "Your Order Invoice";
         return $this->subject($subject)
-                    ->view('admin.invoice.generate-invoice');
+                    ->view('frontend.users.invoice.mail-invoice');
     }
 }

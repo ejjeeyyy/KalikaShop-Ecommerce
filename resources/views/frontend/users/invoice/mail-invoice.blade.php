@@ -181,6 +181,7 @@
                     <td width="15%" class="fw-bold"><span style="font-family: DejaVu Sans; sans-serif;">&#x20B1;</span>{{ $orderItem->quantity * $orderItem->price }}</td>
                     @php
                         $totalPrice += $orderItem->quantity * $orderItem->price ;
+                        $totalAllocation = $totalPrice*(($orderItem->product->allocation_percentage * $orderItem->quantity)/100);
                     @endphp
                 </tr>
             @endforeach
@@ -189,6 +190,9 @@
                 <td colspan="1" class="total-heading">
                     <span style="font-family: DejaVu Sans; sans-serif;">&#x20B1;</span>{{ $totalPrice }}
                 </td>
+            </tr>
+            <tr>
+                <td colspan="5">Hooray! You have contributed <span style="font-family: DejaVu Sans; sans-serif;">&#x20B1;</span>{{ $totalAllocation }} to the environment.</td>
             </tr>
         </tbody>
     </table>

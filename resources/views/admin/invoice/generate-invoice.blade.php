@@ -149,6 +149,7 @@
                 <th>Product</th>
                 <th>Price</th>
                 <th>Quantity</th>
+                <th>Allocation Percentage</th>
                 <th>Total</th>
             </tr>
         </thead>
@@ -169,16 +170,31 @@
                     </td>
                     <td width="10%">{{ $orderItem->price }}</td>
                     <td width="10%">{{ $orderItem->quantity }}</td>
+                    <td width="10%">%{{ $orderItem->product->allocation_percentage * $orderItem->quantity }}</td>
                     <td width="15%" class="fw-bold"><span style="font-family: DejaVu Sans; sans-serif;">&#x20B1;</span>{{ $orderItem->quantity * $orderItem->price }}</td>
                     @php
                         $totalPrice += $orderItem->quantity * $orderItem->price ;
+                        $totalAllocation = $totalPrice*(($orderItem->product->allocation_percentage * $orderItem->quantity)/100);
+                        $totalRevenue = $totalPrice - ($totalPrice*(($orderItem->product->allocation_percentage * $orderItem->quantity)/100));
                     @endphp
                 </tr>
             @endforeach
             <tr>
-                <td colspan="4" class="total-heading">Total Amount:</td>
+                <td colspan="5" class="total-heading">Total Amount:</td>
                 <td colspan="1" class="total-heading">
                     <span style="font-family: DejaVu Sans; sans-serif;">&#x20B1;</span>{{ $totalPrice }}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5" class="total-heading">Total Allocation Amount:</td>
+                <td colspan="1" class="total-heading">
+                    <span style="font-family: DejaVu Sans; sans-serif;">&#x20B1;</span>{{ $totalAllocation }}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5" class="total-heading">Total Revenue Amount:</td>
+                <td colspan="1" class="total-heading">
+                    <span style="font-family: DejaVu Sans; sans-serif;">&#x20B1;</span>{{ $totalRevenue }}
                 </td>
             </tr>
         </tbody>
