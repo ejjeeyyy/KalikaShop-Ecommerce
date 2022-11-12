@@ -345,3 +345,9 @@
     color: #fff;
     width: 20px;
 }
+
+#slider-carousel{
+    /* width: 300px;  */
+    height: 500px; 
+    object-fit: cover;
+}

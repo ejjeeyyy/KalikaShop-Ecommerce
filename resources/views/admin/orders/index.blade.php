@@ -6,6 +6,11 @@
 
 <div class="row">
         <div class="col-md-12">
+            @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
             <div class="card">
                 <div class="card-header">
                     <h3>My Orders</h3>
@@ -30,9 +35,43 @@
                                     <option value="out-for-delivery" {{ Request::get('status') == 'out-for-delivery' ? 'selected':'' }}>Out for delivery</option>
                                 </select>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-2">
                                 <br/>
                                 <button type="submit" class="btn btn-primary">Filter</button>
+                            </div>
+
+                            <div class="col-md-2">
+                                <br/>
+                                <a href="{{ url('admin/orders1') }}" class="btn btn-sm btn-warning float-end">Export Excel</a>
+                            </div>
+
+                            <div class="col-md-2">
+                                <br/>
+                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Reset Order Records
+                                  </button>
+                                {{-- <a href="{{ url('admin/orders2') }}"  onclick="return confirm('Are you sure you want to clear all order records? This action is irreversible!')" class="btn btn-sm btn-danger float-end">Export and Clear Records</a> --}}
+                            </div>
+                        </div>
+                        
+
+                          
+                        <div class="modal" id="exampleModal" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title fs-3"><i class="bi bi-exclamation-triangle-fill"></i>Warning!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                <p><div class="fw-bold">You are about to reset all order records.</div> <br> Before proceeding, make sure you have downloaded the excel file of the order records. This action is irreversible!</p>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <a href="{{ url('admin/orders1') }}" class="btn btn-warning">Download Records</a>
+                                <a href="{{ url('admin/orders2') }}" class="btn btn-danger">Reset Order Records</a>
+                                </div>
+                            </div>
                             </div>
                         </div>
 

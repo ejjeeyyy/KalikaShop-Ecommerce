@@ -56,6 +56,9 @@ Route::get('thank-you', [App\Http\Controllers\Frontend\FrontendController::class
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+
+
+
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
 
@@ -123,9 +126,12 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
         Route::get('/invoice/{orderId}/generate', 'generateInvoice');
 
         Route::get('/invoice/{orderId}/mail', 'mailInvoice');
+        Route::get('/orders1','exportOrders');
+        Route::get('/orders2','exportOrdersAndTruncateTable');
 
     });
 
+   
     Route::controller(App\Http\Controllers\Admin\UserController::class)->group(function () {
         Route::get('/users', 'index');
         Route::get('/users/create', 'create');

@@ -1,13 +1,16 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 use App\Models\Order;
+use App\Models\OrderItem;
+use Illuminate\Http\Request;
+use App\Exports\ordersExport;
+use Illuminate\Support\Carbon;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Mail\InvoiceOrderMailable;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
+use Maatwebsite\Excel\Facades\Excel;
 
 class OrderController extends Controller
 {
@@ -87,9 +90,19 @@ class OrderController extends Controller
         }catch(\Exception $e){
             return redirect('admin/orders/'.$orderId)->with('message','Something went wrong! '.$order->email);
         }
-
-
     }
 
+    public function exportOrders()
+    {
+        $todayDate = Carbon::now()->format('d-m-Y');
+        return Excel::download(new ordersExport, 'Orders_'.$todayDate.'.xlsx');
+    }
+
+    public function exportOrdersAndTruncateTable()
+    {
+          Order::truncate();
+          OrderItem::truncate();
+          return redirect('admin/orders')->with('message','Records Downloaded and Deleted Successfully');
+    }
 
 }
