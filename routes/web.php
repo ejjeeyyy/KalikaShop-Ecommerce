@@ -22,6 +22,7 @@ Auth::routes();
 
 Route::controller(App\Http\Controllers\Frontend\FrontendController::class)->group(function () {
     Route::get('/', 'index');
+    Route::get('/about-us', 'aboutUs');
     Route::get('/collections', 'categories');
     Route::get('/collections/{category_slug}', 'products');
     Route::get('/collections/{category_slug}/{product_slug}', 'productView');

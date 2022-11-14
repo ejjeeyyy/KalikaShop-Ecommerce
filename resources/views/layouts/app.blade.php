@@ -14,6 +14,10 @@
     <meta name="keywords" content="@yield('meta_keyword')">
     <meta name="author" content="KalikaShop Team">
 
+    {{-- Tab Icon --}}
+    <link rel="shortcut icon" href="{{ url('https://cdn.discordapp.com/attachments/1017009278445432862/1033281796521070653/kaliksahop_logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ url('https://cdn.discordapp.com/attachments/1017009278445432862/1033281796521070653/kaliksahop_logo.png') }}">
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
