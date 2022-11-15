@@ -43,7 +43,7 @@
                             </div>
                             <div class="col-md-12 mb-3">
                                 <label>Description</label>
-                                <textarea name="description" class="form-control" rows="3">{{ $blog->description }}</textarea>
+                                <textarea name="description" class="form-control" rows="25">{{ $blog->description }}</textarea>
                                 @error('description') <small class="text-danger">{{$message}}</small> @enderror
                             </div>
                             {{-- <div class="col-md-6 mb-3">

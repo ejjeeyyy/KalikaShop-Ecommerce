@@ -353,13 +353,14 @@
 
 #blogItem{
     height: 300px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 
 #blogCard{
     width: 600px;
-    object-fit: cover;
+    max-height: 500px;
+    overflow: hidden;
 }
 
 .product-image{
@@ -372,3 +373,41 @@
     object-fit: cover;
     
 }
+
+/* Blog CSS */
+/* Category CSS Start */
+.blog-card{
+    border: 1px solid #ddd;
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+    margin-bottom: 24px;
+    background-color: #fff;
+}
+.blog-card a{
+    text-decoration: none;
+}
+.blog-card .blog-card-img{
+    max-height: 260px;
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+}
+
+.blog-card .blog-card-body{
+    padding: 10px 16px;
+    
+}
+.blog-card .blog-card-body h5{
+    margin-bottom: 0px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+}
+
+#viewBlogImage{
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: scale-down;
+    margin: auto;
+}
+
+/* Category CSS End */

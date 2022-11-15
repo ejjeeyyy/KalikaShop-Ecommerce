@@ -37,7 +37,7 @@
                             </div>
                             <div class="col-md-12 mb-3">
                                 <label>Description</label>
-                                <textarea name="description" class="form-control" rows="3"></textarea>
+                                <textarea name="description" class="form-control" rows="25"></textarea>
                             </div>
 
                             <div class="col-md-12 mb-3">

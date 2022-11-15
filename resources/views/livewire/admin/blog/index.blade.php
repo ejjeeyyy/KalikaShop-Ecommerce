@@ -57,7 +57,7 @@
                                         <img src="{{ asset("$blog->image") }}" style="width: 70px; height: 70px" alt="Blog">
                                     </td>
                                     <td>{{ $blog->category }}</td>
-                                    <td style="max-width: 500px;">{{ $blog->description }}</td>
+                                    <td style="max-width: 500px;">{{ substr($blog->description,0 ,300) }}...</td>
                                     {{-- <td>{{ $blog->tags }}</td> --}}
                                     <td>
                                         <a href="{{ url('admin/blog/'.$blog->id.'/edit') }}" class="btn btn-success">Edit</a>                            
