@@ -353,7 +353,7 @@
 
 #blogItem{
     height: 300px;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 
