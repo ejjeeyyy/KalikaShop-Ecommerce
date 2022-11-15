@@ -30,7 +30,8 @@
                             style="background-image: url('https://cdn.discordapp.com/attachments/1017009278445432862/1041731204535287808/prod.webp');
                             background-size:cover;">
                             <div class="d-flex flex-column h-100 p-5  text-white">
-                                <h3 class="pt-5 mt-5 mb-4  display-6 fw-bold text-center" style="text-shadow: 2px 2px 3px black;">Promote Eco products</h3>
+                                <h3 class="pt-5 mt-5 mb-4  display-6 fw-bold text-center"
+                                    style="text-shadow: 2px 2px 3px black;">Promote Eco products</h3>
                             </div>
                         </div>
                     </div>
@@ -39,7 +40,8 @@
                         <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
                             style="background-image: url('https://cdn.discordapp.com/attachments/1017009278445432862/1041734244273238167/plant.webp'); background-size: cover;">
                             <div class="d-flex flex-column h-100 p-5 my-auto text-white">
-                                <h3 class="pt-5 mt-5 mb-4  display-6 fw-bold text-center" style="text-shadow: 3px 3px 3px black;">Give back to the Environment</h3>
+                                <h3 class="pt-5 mt-5 mb-4  display-6 fw-bold text-center"
+                                    style="text-shadow: 3px 3px 3px black;">Give back to the Environment</h3>
                             </div>
                         </div>
                     </div>
@@ -48,7 +50,8 @@
                         <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
                             style="background-image: url('https://cdn.discordapp.com/attachments/1017009278445432862/1041735902940110868/solar.webp');">
                             <div class="d-flex flex-column h-100 p-5 my-auto text-white text-center">
-                                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="text-shadow: 3px 3px 3px black;">Promote Sustainable Development</h3>
+                                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="text-shadow: 3px 3px 3px black;">
+                                    Promote Sustainable Development</h3>
                             </div>
                         </div>
                     </div>
@@ -68,26 +71,28 @@
                     <div id="donate-button-1"></div>
                     <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
                     <script>
-                    PayPal.Donation.Button({
-                    env:'production',
-                    hosted_button_id:'PYTFEKVZLKSNC',
-                    image: {
-                    src:'https://pics.paypal.com/00/s/YjdjYThmNWMtNjlmYi00NjE3LWJmMTEtYzA1YmM4ZWJhZjJk/file.PNG',
-                    alt:'Donate with PayPal button',
-                    title:'PayPal - The safer, easier way to pay online!',
-                    }
-                    }).render('#donate-button-1');
+                        PayPal.Donation.Button({
+                            env: 'production',
+                            hosted_button_id: 'PYTFEKVZLKSNC',
+                            image: {
+                                src: 'https://pics.paypal.com/00/s/YjdjYThmNWMtNjlmYi00NjE3LWJmMTEtYzA1YmM4ZWJhZjJk/file.PNG',
+                                alt: 'Donate with PayPal button',
+                                title: 'PayPal - The safer, easier way to pay online!',
+                            }
+                        }).render('#donate-button-1');
                     </script>
                 </div>
                 <h5>Make Donation</h5>
                 <div class="col-lg-8 mx-auto">
-                    <p class="lead mb-4">Support KalikaShop's work to promote the use of eco-products, sustainable development and a clean greener world. Your donation will go directly to the environment through our environmental projects. 
+                    <p class="lead mb-4">Support KalikaShop's work to promote the use of eco-products, sustainable
+                        development and a clean greener world. Your donation will go directly to the environment through our
+                        environmental projects.
                     </p>
                 </div>
             </div>
         </div>
-        
-            
+
+
         {{-- End of Donation Section --}}
 
 

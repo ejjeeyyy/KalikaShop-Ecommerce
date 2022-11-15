@@ -91,9 +91,4 @@ class FrontendController extends Controller
     {
         return view('frontend.about-us');
     }
-
-    public function donate()
-    {
-        return view('frontend.about-us');
-    }
 }
