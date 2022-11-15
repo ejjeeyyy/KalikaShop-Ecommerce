@@ -100,6 +100,23 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/about-us') }}">About Us</a>
                     </li>
+                    <li class="nav-item">
+                            <div id="donate-button-container">
+                                <div id="donate-button" style="margin-top:4px;"></div>
+                                <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                                <script>
+                                PayPal.Donation.Button({
+                                env:'production',
+                                hosted_button_id:'9GEAEVUHVQGNS',
+                                image: {
+                                src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif',
+                                alt:'Donate with PayPal button',
+                                title:'PayPal - The safer, easier way to pay online!',
+                                }
+                                }).render('#donate-button');
+                                </script>
+                                </div>  
+                    </li>
                 </ul>
             </div>
         </div>
