@@ -108,8 +108,10 @@
                         <a class="nav-link" href="{{ url('/featured-products') }}">Featured Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/blog') }}">Blog</a>
                         <a class="nav-link" href="{{ url('/about-us') }}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/blog') }}">Blog</a>
                     </li>
                     <li class="nav-item">
                         <div id="donate-button-container">
