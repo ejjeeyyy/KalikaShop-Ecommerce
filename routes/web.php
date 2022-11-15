@@ -23,6 +23,8 @@ Auth::routes();
 Route::controller(App\Http\Controllers\Frontend\FrontendController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('/collections', 'categories');
+    Route::get('/blog', 'blogs');
+    Route::get('/blog/{blog_title}', 'show');
     Route::get('/collections/{category_slug}', 'products');
     Route::get('/collections/{category_slug}/{product_slug}', 'productView');
 
@@ -83,6 +85,16 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
         Route::post('/category', 'store');
         Route::get('/category/{category}/edit', 'edit');
         Route::put('/category/{category}', 'update');
+
+    });
+
+    //Blog Routes
+    Route::controller(App\Http\Controllers\Admin\BlogController::class)->group(function () {
+        Route::get('/blog', 'index');
+        Route::get('/blog/create', 'create');
+        Route::post('/blog', 'store');
+        Route::get('/blog/{blog}/edit', 'edit');
+        Route::put('/blog/{blog}', 'update');
 
     });
 

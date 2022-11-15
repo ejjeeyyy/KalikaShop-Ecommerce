@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\Product;
+use App\Models\Blog;
 use App\Models\Slider;
+use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -47,6 +48,18 @@ class FrontendController extends Controller
     {
         $categories = Category::where('status','0')->get();
         return view('frontend.collections.category.index', compact('categories'));
+    }
+
+    public function blogs()
+    {
+        $blogs = Blog::latest()->get();
+        return view('frontend.blog.index', compact('blogs'));
+    }
+
+    public function show($id)
+    {
+        $blogShow = Blog::findOrFail($id);
+        return view('frontend.blog.show', compact('blogShow'));
     }
 
     public function products($category_slug)

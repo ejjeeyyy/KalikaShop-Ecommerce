@@ -93,6 +93,28 @@
             </a>
           </li>
 
+          {{-- Blog Dropdown --}}
+          <li class="nav-item {{ Request::is('admin/blog*') ? 'active':'' }}">
+            <a class="nav-link" data-bs-toggle="collapse" href="#blog" 
+              aria-expanded="{{ Request::is('admin/blog*') ? 'true':'false' }}" 
+              aria-controls="blog">
+              <i class="bi bi-newspaper menu-icon"></i>
+              <span class="menu-title">Blog</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse {{ Request::is('admin/blog*') ? 'show':'' }}" id="blog">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> 
+                  <a class="nav-link {{ Request::is('admin/blog/create') ? 'active':'' }}" href="{{ url('admin/blog/create') }}">Add Post</a>
+                </li>
+
+                <li class="nav-item"> 
+                  <a class="nav-link {{ Request::is('admin/blog') || Request::is('admin/blog/*/edit') ? 'active':'' }}" href="{{ url('admin/blog') }}">View Posts</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
           {{-- Users --}}
           <li class="nav-item {{ Request::is('admin/users*') ? 'active':'' }}">
             <a class="nav-link" data-bs-toggle="collapse" href="#auth" 

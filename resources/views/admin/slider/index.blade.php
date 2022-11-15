@@ -34,7 +34,7 @@
                             <tr>
                                 <td>{{ $slider->id }}</td>
                                 <td>{{ $slider->title }}</td>
-                                <td>{{ $slider->description }}</td>
+                                <td style="max-width: 500px;">{{ $slider->description }}</td>
                                 <td>
                                     <img src="{{ asset("$slider->image") }}" style="width: 70px; height: 70px" alt="Slider">
                                 </td>

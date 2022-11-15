@@ -351,3 +351,15 @@
     height: 500px; 
     object-fit: cover;
 }
+
+#blogItem{
+    height: 300px;
+    object-fit: cover;
+}
+
+
+#blogCard{
+    width: 600px;
+    object-fit: cover;
+}
+
