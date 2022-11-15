@@ -6,10 +6,6 @@
 <!-- 
           <a class="navbar-brand brand-logo" href="index.html"><img src="images/Logo.png" alt="logo"/></a>
           <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/Logo.png" alt="logo"/></a> -->
-
-          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="mdi mdi-sort-variant"></span>
-          </button>
         </div>  
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">

@@ -73,7 +73,7 @@
 
                             @if ($productItem->productImages->count() > 0)
                             <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}">
-                            <img src="{{ asset($productItem->productImages[0]->image) }}" alt="{{ $productItem->name }}">
+                            <img src="{{ asset($productItem->productImages[0]->image) }}" alt="{{ $productItem->name }}" class="product-image">
                             </a>
                             @endif
 
@@ -127,7 +127,7 @@
 
                             @if ($productItem->productImages->count() > 0)
                             <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}">
-                            <img src="{{ asset($productItem->productImages[0]->image) }}" alt="{{ $productItem->name }}">
+                            <img src="{{ asset($productItem->productImages[0]->image) }}" alt="{{ $productItem->name }}" class="product-image">
                             </a>
                             @endif
 
@@ -181,7 +181,7 @@
 
                             @if ($productItem->productImages->count() > 0)
                             <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}">
-                            <img src="{{ asset($productItem->productImages[0]->image) }}" alt="{{ $productItem->name }}">
+                        <img src="{{ asset($productItem->productImages[0]->image) }}" alt="{{ $productItem->name }}" class="product-image">
                             </a>
                             @endif
 

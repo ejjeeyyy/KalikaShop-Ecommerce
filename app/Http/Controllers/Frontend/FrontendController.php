@@ -28,7 +28,7 @@ class FrontendController extends Controller
             return view('frontend.pages.search', compact('searchProducts'));
         }else{
 
-            return redirect()->back()->with('message','Empty Search');
+            return redirect()->back()->with('message','No results found');
         }
     }
 
@@ -98,5 +98,10 @@ class FrontendController extends Controller
     public function thankyou()
     {
         return view('frontend.thank-you');
+    }
+
+    public function aboutUs()
+    {
+        return view('frontend.about-us');
     }
 }
