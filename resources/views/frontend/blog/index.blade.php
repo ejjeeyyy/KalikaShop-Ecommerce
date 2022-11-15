@@ -29,7 +29,7 @@
                                 </div>
                                 <a href="{{ url('/blog/' . $blogItem->id) }}" class="font-weight-bold text-success">
                                     <h3 class="mx-3">{{ $blogItem->title }}</h3>
-                                    <p class="text-muted mx-3">{{ substr($blogItem->description,0 ,400) }}...<span style="color:rgb(0, 119, 255);">Learn More</span></p>
+                                    <p class="text-muted mx-3">{{ substr($blogItem->description,0 ,350) }}...<span style="color:rgb(0, 119, 255);">Learn More</span></p>
                                     {{-- <a href="#" class="btn btn-outline-secondary">#{{ $blogItem->tags }}</a> --}}
                                 </a>
                         </div>
