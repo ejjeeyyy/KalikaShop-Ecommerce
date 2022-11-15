@@ -22,7 +22,7 @@
                             @endif
                        
 
-                        <p class="mx-3 mt-3" >{{ $blogShow->description }}</p>
+                        <p class="mx-3 mt-3" style="text-align: justify; " >{!! nl2br($blogShow->description) !!}</p>
                         {{-- <div class="my-5">{!! nl2br($blogShow->description) !!}</div> --}}
 
                         {{-- @foreach ($blog->tags as $tag)
