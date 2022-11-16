@@ -1,4 +1,7 @@
 @extends('layouts.app')
+
+@section('title') {{ $blogShow->title }} @endsection
+
 @section('content')
     <div class="container py-3 my-3">
         <div class="row justify justify-content-center">       

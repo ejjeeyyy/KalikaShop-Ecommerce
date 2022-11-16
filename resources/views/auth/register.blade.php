@@ -1,11 +1,16 @@
 @extends('layouts.app')
 
+@section('title', 'KalikaShop Register')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+        <div class="col-md-6 my-4">
+            <img class="d-block mx-auto"
+                src="https://cdn.discordapp.com/attachments/1017009278445432862/1033281796521070653/kaliksahop_logo.png"
+                alt="" width="150" height="150">
+            <div class="card my-4">
+                <div class="card-header text-center h4">{{ __('Register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
