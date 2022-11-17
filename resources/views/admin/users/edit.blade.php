@@ -37,7 +37,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label>Name</label>
-                            <input type="text" name="name" value="{{ $user->name }}" class="form-control" />
+                            <input type="text" name="name" readonly value="{{ $user->name }}" class="form-control" />
                         </div>
                         <div class="col-md-6 mb-3">
                             <label>Email</label>
@@ -45,7 +45,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label>Password</label>
-                            <input type="password" name="password" class="form-control" />
+                            <input type="password" readonly name="password" class="form-control" />
                         </div>
                         <div class="col-md-6 mb-3">
                             <label>Select Role</label>

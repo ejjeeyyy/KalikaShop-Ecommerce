@@ -119,14 +119,14 @@
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label>Original Price</label>
-                                            <input type="text" name="original_price" class="form-control" />
+                                            <input type="number" name="original_price" class="form-control" />
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label>Selling Price</label>
-                                            <input type="text" name="selling_price" class="form-control" />
+                                            <input type="number" name="selling_price" class="form-control" />
                                         </div>
                                     </div>
 
@@ -161,9 +161,9 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 mt-4">
                                         <div class="mb-3">
-                                            <label>Status</label>
+                                            <label>Hide Product to Users</label>
                                             <input type="checkbox" name="status" />
                                         </div>
                                     </div>
