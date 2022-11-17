@@ -119,21 +119,21 @@
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label>Original Price</label>
-                                            <input type="number" name="original_price" class="form-control" />
+                                            <input type="number" min="1" name="original_price" class="form-control" />
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label>Selling Price</label>
-                                            <input type="number" name="selling_price" class="form-control" />
+                                            <input type="number" min="1" name="selling_price" class="form-control" />
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label>Quantity</label>
-                                            <input type="number" name="quantity" class="form-control" />
+                                            <input type="number" min="1" name="quantity" class="form-control" />
                                         </div>
                                     </div>
 
@@ -142,21 +142,21 @@
                                             <label>Allocation Percentage</label>
                                             <div class="input-group">
                                                 <div class="input-group-text">%</div>
-                                                <input type="number" name="allocation_percentage" class="form-control" />
+                                                <input type="number" min="0.5" name="allocation_percentage" class="form-control" />
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="mb-3">
-                                            <label>Trending</label>
+                                            <label>Trending Product</label>
                                             <input type="checkbox" name="trending" />
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="mb-3">
-                                            <label>Featured</label>
+                                            <label>Featured Product</label>
                                             <input type="checkbox" name="featured" />
                                         </div>
                                     </div>
@@ -193,11 +193,11 @@
                                         Color: <input type="checkbox" name="colors[{{ $coloritem->id }}]" value="{{ $coloritem->id }}" />
                                         {{ $coloritem->name }}
                                         <br/>
-                                        Quantity: <input type="number" name="colorquantity[{{ $coloritem->id }}]" style="width:70px; border:1px solid" />
+                                        Quantity: <input type="number" min="1" name="colorquantity[{{ $coloritem->id }}]" style="width:70px; border:1px solid" />
                                         </div>
                                     </div>
                                     @empty
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 text-danger">
                                         <h1>No colors found</h1>
                                     </div>
                                     @endforelse

@@ -119,21 +119,21 @@
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label>Original Price</label>
-                                            <input type="text" name="original_price" class="form-control" value="{{ $product->original_price }}" />
+                                            <input type="number" min="1" name="original_price" class="form-control" value="{{ $product->original_price }}" />
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label>Selling Price</label>
-                                            <input type="text" name="selling_price" class="form-control" value="{{ $product->selling_price }}" />
+                                            <input type="number" min="1" name="selling_price" class="form-control" value="{{ $product->selling_price }}" />
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label>Quantity</label>
-                                            <input type="number" name="quantity" class="form-control" value="{{ $product->quantity }}" />
+                                            <input type="number" min="1" name="quantity" class="form-control" value="{{ $product->quantity }}" />
                                         </div>
                                     </div>
                                     
@@ -142,21 +142,21 @@
                                             <label>Allocation Percentage</label>
                                             <div class="input-group">
                                                 <div class="input-group-text">%</div>
-                                                <input type="number" name="allocation_percentage" class="form-control" value="{{ $product->allocation_percentage }}" />
+                                                <input type="number" min="0.5" name="allocation_percentage" class="form-control" value="{{ $product->allocation_percentage }}" />
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="mb-3">
-                                            <label>Trending</label>
+                                            <label>Trending Product</label>
                                             <input type="checkbox" name="trending" {{ $product->trending == '1' ? 'checked':'' }} />
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="mb-3">
-                                            <label>Featured</label>
+                                            <label>Featured Product</label>
                                             <input type="checkbox" name="featured" {{ $product->featured == '1' ? 'checked':'' }} />
                                         </div>
                                     </div>
@@ -213,8 +213,8 @@
                                         </div>
                                     </div>
                                     @empty
-                                    <div class="col-md-12">
-                                        <h1>No colors found</h1>
+                                    <div class="col-md-12 text-danger">
+                                        <h3>No more colors available to add in this product</h3>
                                     </div>
                                     @endforelse
                                     </div>
@@ -241,7 +241,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="input-group mb-3" style="width:150px;">
-                                                    <input type="text" value="{{ $prodColor->quantity }}" class="productColorQuantity form-control form-control-sm" />
+                                                    <input type="number" min="0" value="{{ $prodColor->quantity }}" class="productColorQuantity form-control form-control-sm" />
                                                         <button type="button" value="{{ $prodColor->id }}" class="updateProductColorBtn btn btn-primary btn-sm text-white">Update</button>
                                                     </div>
                                                 </td>
