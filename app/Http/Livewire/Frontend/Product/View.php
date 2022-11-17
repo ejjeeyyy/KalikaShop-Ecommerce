@@ -88,7 +88,7 @@ class View extends Component
             {
                 // For Products with Color
                 //check product color
-                if($this->product->productColors()->count() > 1)
+                if($this->product->productColors()->count() >= 1)
                 {
                     if($this->prodColorSelectedQuantity != NULL)
                     {
