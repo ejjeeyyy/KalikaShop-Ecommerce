@@ -143,7 +143,7 @@
                                             <label>Allocation Percentage</label>
                                             <div class="input-group">
                                                 <div class="input-group-text">%</div>
-                                                <input type="number" min="0.5" name="allocation_percentage" class="form-control" />
+                                                <input type="number" min="1" name="allocation_percentage" class="form-control" />
                                             </div>
                                         </div>
                                     </div>
