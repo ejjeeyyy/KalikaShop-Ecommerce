@@ -17,33 +17,33 @@ class CartShow extends Component
             if($cartData->productColor()->where('id',$cartData->product_color_id)->exists()){
 
                 $productColor = $cartData->productColor()->where('id',$cartData->product_color_id)->first();
-                if($productColor->quantity > $cartData->quantity){
+                if(($productColor->quantity >= $cartData->quantity)&&($cartData->quantity > 1)){
                     $cartData->decrement('quantity');
                     $this->dispatchBrowserEvent('message', [
                     'text' => 'Quantity Updated',
-                    'type' => 'info',
+                    'type' => 'warning',
                     'status' => 200
                 ]);
                 }else{
                     $this->dispatchBrowserEvent('message', [
-                        'text' => 'Only '.$productColor->quantity.'Quantity Available',
-                        'type' => 'info',
+                        'text' => 'Minimum Quantity Reached',
+                        'type' => 'error',
                         'status' => 200
                     ]);
                 }
             }else{
-                if($cartData->product->quantity > $cartData->quantity)
+                if(($cartData->product->quantity >= $cartData->quantity)&&($cartData->quantity > 1))
                 {
                     $cartData->decrement('quantity');
                     $this->dispatchBrowserEvent('message', [
                         'text' => 'Quantity Updated',
-                        'type' => 'info',
+                        'type' => 'warning',
                         'status' => 200
                     ]);
                 }else{
                     $this->dispatchBrowserEvent('message', [
-                        'text' => 'Only '.$cartData->product->quantity.'Quantity Available',
-                        'type' => 'info',
+                        'text' => 'Minimum Quantity Reached',
+                        'type' => 'error',
                         'status' => 200
                     ]);
                 }
@@ -70,13 +70,13 @@ class CartShow extends Component
                     $cartData->increment('quantity');
                     $this->dispatchBrowserEvent('message', [
                     'text' => 'Quantity Updated',
-                    'type' => 'info',
+                    'type' => 'warning',
                     'status' => 200
                 ]);
                 }else{
                     $this->dispatchBrowserEvent('message', [
-                        'text' => 'Only '.$productColor->quantity.'Quantity Available',
-                        'type' => 'info',
+                        'text' => 'Only '.$productColor->quantity.' Quantity Available',
+                        'type' => 'error',
                         'status' => 200
                     ]);
                 }
@@ -86,13 +86,13 @@ class CartShow extends Component
                     $cartData->increment('quantity');
                     $this->dispatchBrowserEvent('message', [
                         'text' => 'Quantity Updated',
-                        'type' => 'info',
+                        'type' => 'warning',
                         'status' => 200
                     ]);
                 }else{
                     $this->dispatchBrowserEvent('message', [
-                        'text' => 'Only '.$cartData->product->quantity.'Quantity Available',
-                        'type' => 'info',
+                        'text' => 'Only '.$cartData->product->quantity.' Quantity Available',
+                        'type' => 'error',
                         'status' => 200
                     ]);
                 }
