@@ -136,7 +136,7 @@
                                             <input type="number" name="quantity" class="form-control" value="{{ $product->quantity }}" />
                                         </div>
                                     </div>
-
+                                    
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label>Allocation Percentage</label>
