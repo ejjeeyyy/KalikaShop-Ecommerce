@@ -48,12 +48,22 @@
     
                             @if($product->productColors->count() > 0)
                                 @if($product->productColors)
-                                    @foreach($product->productColors as $colorItem)
-                                        <!-- <input type="radio" name="colorSelection" value="{{ $colorItem->id }}" /> {{ $colorItem->color->name }} -->
-                                        <label class="colorSelectionLabel" style="background-color: {{ $colorItem->color->code }}" wire:click="colorSelected({{ $colorItem->id }})">
-                                            {{ $colorItem->color->name }}
-                                        </label>
+                                <div class="btn-group" role="group"aria-label="Basic radio toggle button group">
+                                    @foreach ($product->productColors as $colorItem)
+                                        <input type="radio" class="btn-check" name="btnradio"
+                                            id="btnradio{{ $colorItem->id }}"
+                                            wire:click="colorSelected({{ $colorItem->id }})">
+                                        <label class="btn btn-outline-dark"
+                                            style="background-color: {{ $colorItem->color->code }}"
+                                            for="btnradio{{ $colorItem->id }}" id="colorButton"><span style="color: black; text-shadow: 1px 1px 2px white;">{{ $colorItem->color->name }}</span></label>
+
+                                        {{-- <label class="colorSelectionLabel"
+                                        style="background-color: {{ $colorItem->color->code }}"
+                                        wire:click="colorSelected({{ $colorItem->id }})">
+                                        
+                                    </label> --}}
                                     @endforeach
+                                </div>
                                 @endif
     
                                 <div>
