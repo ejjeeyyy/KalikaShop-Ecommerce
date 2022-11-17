@@ -41,8 +41,8 @@
                                 Brand : {{ $product->brand }}
                             </p>
                             <div>
-                                <span class="selling-price">₱{{ $product->selling_price }}</span>
-                                <span class="original-price">₱{{ $product->original_price }}</span>
+                                <span class="selling-price">₱{{ number_format($product->selling_price) }}</span>
+                                <span class="original-price">₱{{ number_format($product->original_price) }}</span>
                             </div>
                             <div>
     
@@ -105,7 +105,7 @@
                                 <h5 class="mb-0">Environmental Contribution</h5>
                                 <p>
                                     %{!! $product->allocation_percentage !!} from the revenue of this product will go to the environment! <br>
-                                    You will be able to contribute ₱{{ $totalAllocation }} to the environment if you buy this product.
+                                    You will be able to contribute ₱{{ number_format($totalAllocation) }} to the environment if you buy this product.
                                 </p>
                             </div>
                         </div>
@@ -161,8 +161,8 @@
                                 </a>
                                 </h5>
                                 <div>
-                                    <span class="selling-price">₱ {{ $relatedProductItem->selling_price }}</span>
-                                    <span class="original-price">₱ {{ $relatedProductItem->original_price }}</span>
+                                    <span class="selling-price">₱ {{ number_format($relatedProductItem->selling_price) }}</span>
+                                    <span class="original-price">₱ {{ number_format($relatedProductItem->original_price) }}</span>
                                 </div>
                             </div>
                         </div>
@@ -215,8 +215,8 @@
                                             </a>
                                             </h5>
                                             <div>
-                                                <span class="selling-price">₱ {{ $relatedProductItem->selling_price }}</span>
-                                                <span class="original-price">₱ {{ $relatedProductItem->original_price }}</span>
+                                                <span class="selling-price">₱ {{ number_format($relatedProductItem->selling_price) }}</span>
+                                                <span class="original-price">₱ {{ number_format($relatedProductItem->original_price) }}</span>
                                             </div>
                                         </div>
                                     </div>

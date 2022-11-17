@@ -110,7 +110,7 @@ class View extends Component
                             if($productColor->quantity > 0)
                             {
                                         // check quantity
-                                if($productColor->quantity > $this->quantityCount)
+                                if($productColor->quantity >= $this->quantityCount)
                                 {
                                     // Insert Product to Cart
                                     Cart::create([
