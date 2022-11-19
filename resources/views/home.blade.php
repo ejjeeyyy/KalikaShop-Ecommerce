@@ -1,11 +1,16 @@
 @extends('layouts.app')
 
+@section('title', 'Complete my Account')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 p-5">
-            <div class="card">
-                <div class="card-header">{{ __('Welcome!') }}</div>
+            <img class="d-block mx-auto"
+                src="https://cdn.discordapp.com/attachments/1017009278445432862/1033281796521070653/kaliksahop_logo.png"
+                alt="" width="150" height="150">
+            <div class="card my-5">
+                <div class="card-header h4 text-center">{{ __('Welcome!') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
