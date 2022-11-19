@@ -40,22 +40,28 @@
                             <i class="fa fa-phone"></i> {{ $appSetting->phone1 ?? 'Phone 1' }}
                         </a>
                     </div>
+                    
+                    @if ($appSetting->phone2)
                     <div class="mb-2">
                         <a href="" class="text-white">
                             <i class="fa fa-phone"></i> {{ $appSetting->phone2 ?? 'Phone 2' }}
                         </a>
                     </div>
+                    @endif
+                   
                     <div class="mb-2">
                         <a href="" class="text-white">
                             <i class="fa fa-envelope"></i> {{ $appSetting->email1 ?? 'Email 1' }}
                         </a>
                     </div>
-
+                    @if ($appSetting->email2)
                     <div class="mb-2">
                         <a href="" class="text-white">
                             <i class="fa fa-envelope"></i> {{ $appSetting->email2 ?? 'Email 2' }}
                         </a>
                     </div>
+                    @endif
+                   
                 </div>
             </div>
         </div>

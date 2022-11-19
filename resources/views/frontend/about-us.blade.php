@@ -15,7 +15,7 @@
                     <p class="lead mb-4">Founded and developed by, <strong>Earl John Francisco</strong>, <strong>Joao George
                             Sales</strong>, <strong>Raven Jamel Tamayo</strong>, and <strong>Kent Ira Usares</strong>.
                         KalikaShop is more than just an e-commerce website that sells products online. We promote the use of
-                        eco-friendly products made from recycled, sustainabale, and eco-friendly materials. KalikaShop also
+                        eco-friendly products made from recycled, sustainable, and eco-friendly materials. KalikaShop also
                         utilizes a Green web hosting service with data centers that operates using sustainable energy to
                         avoid contributing pollution to the environment.
                     </p>
