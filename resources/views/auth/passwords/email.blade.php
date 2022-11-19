@@ -1,10 +1,15 @@
 @extends('layouts.app')
 
+@section('title', 'Reset Password')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-6 mt-5">
+                <img class="d-block mx-auto"
+                src="https://cdn.discordapp.com/attachments/1017009278445432862/1033281796521070653/kaliksahop_logo.png"
+                alt="" width="150" height="150">
+            <div class="card my-5">
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">

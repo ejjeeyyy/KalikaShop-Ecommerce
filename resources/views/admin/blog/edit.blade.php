@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3>Edit Blog Post
-                        <a href="{{ url('admin/blog') }}" class="btn btn-primary btn-sm text-white float-end">BACK</a>
+                        <a href="{{ url('admin/blog') }}" class="btn btn-danger btn-sm text-white float-end">CANCEL</a>
                     </h3>
                 </div>
                 <div class="card-body">
@@ -73,7 +73,7 @@
                             </div> --}}
 
                             <div class="col-md-12 mb-3">
-                                <button type="submit" class="btn btn-primary float-end">Update</button>
+                                <button type="submit" class="btn btn-primary float-end text-white">Update</button>
                             </div>
                         </div>
                     </form>

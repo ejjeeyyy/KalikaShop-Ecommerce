@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3>Add Blog Post
-                        <a href="{{ url('admin/blog/') }}" class="btn btn-primary btn-sm text-white float-end">BACK</a>
+                        <a href="{{ url('admin/blog/') }}" class="btn btn-danger btn-sm text-white float-end">CANCEL</a>
                     </h3>
                 </div>
                 <div class="card-body">
