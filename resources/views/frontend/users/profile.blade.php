@@ -18,7 +18,11 @@
                 @if(session('message'))
                     <p class="alert alert-success">{{ session('message') }}</p>
                 @endif
-
+                @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
+                </div>
+            @endif
                 @if($errors->any())
                     <ul class="alert alert-danger">
                         @foreach ($errors->all() as $error)
