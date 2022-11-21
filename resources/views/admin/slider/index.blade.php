@@ -48,6 +48,9 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div>
+                    {{ $sliders->links() }}
+                </div>
             </div>
         </div>
     </div>

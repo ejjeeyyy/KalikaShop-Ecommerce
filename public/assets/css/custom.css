@@ -373,6 +373,11 @@
     object-fit: cover;
     
 }
+.category-thumbnail2{
+    height: 200px; 
+    object-fit: cover;
+    
+}
 
 /* Blog CSS */
 /* Category CSS Start */

@@ -115,7 +115,7 @@
                                 <h5 class="mb-0">Environmental Contribution</h5>
                                 <p>
                                     %{!! $product->allocation_percentage !!} from the revenue of this product will go to the environment! <br>
-                                    You will be able to contribute ₱{{ number_format($totalAllocation) }} to the environment if you buy this product.
+                                    You will be able to contribute ₱{{ number_format((float)$totalAllocation, 2, '.', '') }} to the environment if you buy this product.
                                 </p>
                             </div>
                         </div>
