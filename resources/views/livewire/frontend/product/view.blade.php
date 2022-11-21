@@ -129,7 +129,7 @@
                             </div>
                             <div class="card-body">
                                 <p>
-                                {!! $product->description !!}
+                                {!! nl2br($product->description) !!}
                                 </p>
                             </div>
                         </div>
