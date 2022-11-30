@@ -141,7 +141,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
         Route::get('/invoice/{orderId}/mail', 'mailInvoice');
         Route::get('/orders1','exportOrders');
         Route::get('/orders2','exportOrdersAndTruncateTable');
-
+        Route::get('/orders/{orderId}/delete','destroy');
     });
 
    

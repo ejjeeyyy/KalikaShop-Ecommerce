@@ -100,7 +100,8 @@
                                             <td>{{ $item->payment_mode }}</td>
                                             <td>{{ $item->created_at }}</td>
                                             <td>{{ $item->status_message }}</td>
-                                            <td><a href="{{ url('admin/orders/'.$item->id) }}" class="btn btn-primary btn-sm">View</a></td>
+                                            <td><a href="{{ url('admin/orders/'.$item->id) }}" class="btn btn-primary btn-sm">View</a>
+                                                <a href="{{ url('admin/orders/'.$item->id.'/delete') }}" onclick="return confirm('Are you sure you want to delete this data?')" class="btn btn-danger btn-sm">Delete</a></td>
                                         </tr>
                                     @empty
                                         <tr>

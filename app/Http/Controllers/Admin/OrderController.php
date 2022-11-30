@@ -105,4 +105,13 @@ class OrderController extends Controller
           return redirect('admin/orders')->with('message','Records Downloaded and Deleted Successfully');
     }
 
+    public function destroy($orderId)
+    {
+        $order = Order::findOrFail($orderId);
+        $orderItem = OrderItem::findOrFail($orderId);
+        $order->delete();
+        $orderItem->delete();
+        return redirect('admin/orders')->with('message','Order is Canceled and Removed Successfully');
+    }
+
 }

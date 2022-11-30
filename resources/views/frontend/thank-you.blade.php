@@ -13,6 +13,7 @@
                     <div class="p-4 shadow bg-white rounded">
                         <img src="https://cdn.discordapp.com/attachments/1017009278445432862/1033281796521070653/kaliksahop_logo.png" style="width:300px" alt="KalikaShop Logo">
                         <h4 class="mb-4">Thank You for Shopping at KalikaShop</h4>
+                        <h6 class="mb-4">We have emailed you an invoice of your order.</h6>
                         <div class="row justify-content-center">
                             <div class="col"> 
                                 <a href="{{ url('collections') }}" class="btn btn-success" style="width:200px;"><i class="bi bi-cart4"></i> Shop Now</a>
