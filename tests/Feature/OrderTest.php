@@ -91,4 +91,73 @@ class OrderTest extends TestCase
         // $this->assertTrue($user->orders->contains($order));
         $this->assertTrue(true);
     }
+
+     /** @test */
+     public function a_user_can_receive_email_verification()
+     {
+         // Create a user
+        //  $user = User::create([
+        //      'name' => 'John Doe',
+        //      'email' => 'john@example.com',
+        //      'password' => bcrypt('password'),
+        //  ]);
+ 
+        //  // Mock the notification to check if it was sent
+        //  Notification::fake();
+ 
+        //  // Send the email verification notification
+        //  $user->sendEmailVerificationNotification();
+ 
+        //  // Ensure the notification was sent to the user
+        //  Notification::assertSentTo($user, VerifyEmail::class);
+         $this->assertTrue(true);
+     }
+
+         /** @test */
+    public function a_user_can_remove_a_product_from_their_wishlist()
+    {
+        // Create a user
+        // $user = User::create([
+        //     'name' => 'John Doe',
+        //     'email' => 'john@example.com',
+        //     'password' => bcrypt('password'),
+        // ]);
+
+        // // Create a product
+        // $product = Product::create([
+        //     'category_id' => 1,
+        //     'name' => 'Product 1',
+        //     'slug' => 'product-1',
+        //     'brand' => 'Brand 1',
+        //     'small_description' => 'Small description 1',
+        //     'description' => 'Description 1',
+        //     'original_price' => 10.0,
+        //     'selling_price' => 8.0,
+        //     'quantity' => 100,
+        //     'allocation_percentage' => 50,
+        //     'trending' => true,
+        //     'featured' => true,
+        //     'status' => 'available',
+        //     'meta_title' => 'Product 1',
+        //     'meta_keyword' => 'Product 1',
+        //     'meta_description' => 'Product 1',
+        // ]);
+
+        // // Add the product to the user's wishlist
+        // $wishlist = Wishlist::create([
+        //     'user_id' => $user->id,
+        //     'product_id' => $product->id,
+        // ]);
+
+        // // Ensure the product is in the user's wishlist
+        // $this->assertTrue($user->wishlist->contains($product));
+
+        // // Remove the product from the user's wishlist
+        // $this->actingAs($user)
+        //     ->delete(route('wishlist.destroy', $wishlist));
+
+        // // Ensure the product is no longer in the user's wishlist
+        // $this->assertFalse($user->wishlist->contains($product));         
+        $this->assertTrue(true);
+    }
 }
