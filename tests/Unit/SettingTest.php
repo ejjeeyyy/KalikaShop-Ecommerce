@@ -11,6 +11,7 @@ class SettingTest extends TestCase
      *
      * @return void
      */
+<<<<<<< HEAD
     public function testCanSettingCreate()
     {
         // Generate random data for website setting
@@ -86,4 +87,10 @@ class SettingTest extends TestCase
     }
 
 
+=======
+    public function test_example()
+    {
+        $this->assertTrue(true);
+    }
+>>>>>>> 660e6a197a1d47d5d5f85e857ab5053847452234
 }
